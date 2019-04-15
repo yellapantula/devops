@@ -18,6 +18,29 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+	
+	<distributionManagement>
+	  <repository>
+	    <id>release</id>
+	    <name>releases</name>
+	    <url>http://localhost:8081/artifactory/libs-release-local</url>
+	  </repository>
+	  <snapshotRepository>
+	    <id>snapshot</id>
+	    <name>snapshots</name>
+	    <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+	  </snapshotRepository>
+	</distributionManagement>
+	
+	<scm>
+	  <connection>scm:git:git@github.com:yellapantula/devops.git</connection>
+	  <developerConnection>scm:git:git@github.com:yellapantula/devops.git</developerConnection>
+	  <url>git@github.com:yellapantula/devops.git</url>
+	  <tag>HEAD</tag>
+	</scm>
+
+
+
 
 	<dependencies>
 		<dependency>
@@ -51,6 +74,15 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				  <groupId>org.apache.maven.plugins</groupId>
+				  <artifactId>maven-release-plugin</artifactId>
+				  <version>2.5.1</version>
+				  <configuration>
+				    <tagNameFormat>v@{project.version}</tagNameFormat>
+				    <autoVersionSubmodules>true</autoVersionSubmodules>
+				  </configuration>
 			</plugin>
 		</plugins>
 	</build>
