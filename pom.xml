@@ -10,7 +10,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>devops</artifactId>
 
-	<version>1.3.3-SNAPSHOT</version>
+	<version>1.3.3</version>
 
 	<packaging>war</packaging>
 	<name>devops</name>
@@ -37,7 +37,7 @@
 	  <connection>scm:git:git@github.com:yellapantula/devops.git</connection>
 	  <developerConnection>scm:git:git@github.com:yellapantula/devops.git</developerConnection>
 	  <url>git@github.com:yellapantula/devops.git</url>
-	  <tag>HEAD</tag>
+	  <tag>v1.3.3</tag>
 	</scm>
 
 
