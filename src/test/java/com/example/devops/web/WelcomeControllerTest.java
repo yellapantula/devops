@@ -17,7 +17,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-
 @SpringBootTest
 @WebAppConfiguration
 public class WelcomeControllerTest {
