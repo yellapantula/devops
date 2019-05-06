@@ -1,8 +1,8 @@
 node {
    def mvnHome
    stage('Prepare') {
-      git url: 'git@github.com:yellapantula/devops.git', branch: 'develop'
-      mvnHome = tool 'maven'
+      git url: 'git@github.com:yellapantula/devops.git', branch: 'release/release_4'
+      mvnHome = tool 'Maven'
    }
    stage('Build') {
       if (isUnix()) {
