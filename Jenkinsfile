@@ -1,3 +1,7 @@
+@Library('shared-library')_
+
+
+
 node {
    def mvnHome
    stage('Prepare') {
@@ -35,4 +39,11 @@ node {
    stage("Smoke Test"){
        sh "curl --retry-delay 10 --retry 5 http://localhost:8080/devops"
    }
+    post {
+        always {
+       /* Use slackNotifier.groovy from shared library and provide current build result as parameter */   
+            slackNotifier(currentBuild.currentResult)
+            cleanWs()
+        }
+    }
 }
