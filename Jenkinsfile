@@ -47,6 +47,7 @@
                 cleanWs()
                 slackNotifier(currentBuild.currentResult)
             }
+            }
   }
 
 
