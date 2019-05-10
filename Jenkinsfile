@@ -10,6 +10,7 @@ pipeline {
          git url: 'git@github.com:yellapantula/devops.git', branch: 'release/release_4'
          mvnHome = tool 'Maven'
       }
+   }
       stage('Build') {
          if (isUnix()) {
             sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
@@ -41,7 +42,7 @@ pipeline {
       stage("Smoke Test"){
           sh "curl --retry-delay 10 --retry 5 http://localhost:8080/devops"
       }
-   }
+   
        post {
            always {
           /* Use slackNotifier.groovy from shared library and provide current build result as parameter */   
