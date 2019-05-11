@@ -2,8 +2,8 @@
 pipeline{
   agent any
    stages{
-      def mvnHome
       stage('Prepare') {
+          def mvnHome
           git url: 'git@github.com:yellapantula/devops.git', branch: 'release/release_4'
           mvnHome = tool 'Maven'
       }
