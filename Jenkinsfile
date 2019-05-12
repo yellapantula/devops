@@ -64,12 +64,12 @@ pipeline{
       }
    }
 
-      post {
-        always {
-            cleanWs()
-            slackNotifier(currentBuild.currentResult)
+        post {
+            always {
+                cleanWs()
+                slackNotifier(currentBuild.currentResult)
+            }
         }
-      }
 }
 
 
