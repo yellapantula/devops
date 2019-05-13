@@ -15,10 +15,8 @@ pipeline{
         steps{
           script{
             if (isUnix()) {
-                sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-            } else {
-                bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
-            }
+                sh "-Dmaven.test.failure.ignore clean package"
+            } 
           }
 
         }
