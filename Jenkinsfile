@@ -31,10 +31,8 @@ pipeline{
           steps{
               script{
                     if (isUnix()) {
-                    sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean verify"
-                    } else {
-                    bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean verify/)
-                    }
+                        sh "mvn clean verify -Dmaven.test.failure.ignore "
+                    } 
                 }
             }
         }
