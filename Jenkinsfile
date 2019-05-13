@@ -3,8 +3,8 @@ def mvnHome=tool 'Maven'
 
 pipeline {
     agent any
-    stages {      
-      node {        
+    node { 
+        stages {          
          stage('Prepare') {
             steps{
             git url:'git@github.com:yellapantula/devops.git', branch: 'release/release_4'
