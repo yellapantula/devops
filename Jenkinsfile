@@ -65,16 +65,16 @@ pipeline{
       }
    }
 
+       node("osx || linux") {
         post {
             always {
-              node("osx || linux") {
                 script {
                   cleanWs()
                 SlackNotifier(currentBuild.currentResult)
                 }
-              }
-            }
+              }            
         }
+       }
 }
 
 
