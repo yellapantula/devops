@@ -3,6 +3,9 @@ def mvnHome= tool 'Maven'
 
 pipeline{
   agent any
+   environment {
+    VERSION = sh(returnStdout: true, script: 'git describe --tags')
+    }
    stages{
       stage('Prepare') {
           steps{
