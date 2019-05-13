@@ -67,11 +67,14 @@ pipeline{
 
         post {
             always {
+                node("osx || linux") {
+                warnings canRunOnFailed: true, consoleParsers: [[parserName: 'Clang (LLVM based)']]
+                    }
                 script {
-                  cleanWs()
+                 cleanWs()
                 SlackNotifier(currentBuild.currentResult)
                 }
-              }            
+             }            
         }
 
 }
