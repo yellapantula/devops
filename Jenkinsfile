@@ -41,9 +41,7 @@ pipeline{
           steps{
               script{
                     if (isUnix()) {
-                        sh "'${mvnHome}/bin/mvn' sonar:sonar"
-                    } else {
-                        bat(/"${mvnHome}\bin\mvn" sonar:sonar/)
+                        sh "mvn sonar:sonar"
                     }
                 }
             }
