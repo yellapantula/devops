@@ -4,20 +4,12 @@ pipeline{
   agent any
 
    stages{
-
-
-      stage('Build') {
+      stage('Prepare') {
           steps{
-              script{
-                if (isUnix()) {
-                    sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
-                } else {
-                    bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
-                }
-              }
-             
-            }
-        }
+          git url: 'git@github.com:yellapantula/devops.git', branch: 'release/release_4'
+          }
+      }
+        
    }
 }
 
