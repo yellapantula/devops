@@ -8,7 +8,7 @@ pipeline{
           steps{
             git url: 'git@github.com:yellapantula/devops.git', branch: 'release/release_4'
           }
-      }
+        }
 
       stage('Build') {
           steps{
@@ -70,10 +70,9 @@ pipeline{
     }
         post {
           always {
-              script {
                 cleanWs()
                 SlackNotifier(currentBuild.currentResult)
-              }
+              
            }            
         }
 
