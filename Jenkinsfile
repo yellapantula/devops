@@ -65,7 +65,6 @@ pipeline{
       }
    }
 
-       node{
         post {
             always {
                 script {
@@ -74,7 +73,7 @@ pipeline{
                 }
               }            
         }
-       }
+
 }
 
 
