@@ -2,7 +2,7 @@
 def mvnHome= tool 'Maven'
 
 pipeline{
-  agent any
+  agent none
    stages{
       stage('Prepare') {
           steps{
