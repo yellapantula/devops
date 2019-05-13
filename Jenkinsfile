@@ -65,7 +65,7 @@ pipeline{
       }
    }
 
-       node("osx || linux") {
+       node{
         post {
             always {
                 script {
