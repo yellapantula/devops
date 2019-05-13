@@ -1,9 +1,9 @@
 @Library('shared-library')_
-def mvnHome= tool 'Maven'
 
 
 pipeline{
   agent any
+  def mvnHome= tool 'Maven'
    stages{
       stage('Prepare') {
           steps{
