@@ -67,8 +67,10 @@ pipeline{
 
         post {
             always {
+              script {
                 cleanWs()
               SlackNotifier(currentBuild.currentResult)
+              }
             }
         }
 }
