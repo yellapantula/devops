@@ -66,6 +66,7 @@ pipeline{
    }
 
         post {
+          agent any
             always {
               script {
                 cleanWs()
