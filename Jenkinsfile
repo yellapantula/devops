@@ -67,9 +67,11 @@ pipeline{
 
         post {
             always {
-              script {
-                cleanWs()
-              SlackNotifier(currentBuild.currentResult)
+              node("osx || linux") {
+                script {
+                  cleanWs()
+                SlackNotifier(currentBuild.currentResult)
+                }
               }
             }
         }
