@@ -3,6 +3,7 @@ def mvnHome=tool 'Maven'
 
 pipeline {
     agent any
+    node{
         stages {          
          stage('Prepare') {
             steps{
@@ -70,7 +71,7 @@ pipeline {
             }
           }
         }
-    
+    }
     post {
         always {
             cleanWs()
