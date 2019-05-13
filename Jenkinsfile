@@ -57,14 +57,13 @@ pipeline {
             }
          }
          stage("Smoke Test"){
-             steps{
+            steps{
                script{
-                sh "curl --retry-delay 10 --retry 5 http://localhost:8080/devops"
+                    sh "curl --retry-delay 10 --retry 5 http://localhost:8080/devops"
                }
-             }
             }
+          }
         }
-      }
     }
     post {
         always {
