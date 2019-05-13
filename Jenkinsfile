@@ -11,6 +11,7 @@ pipeline{
       }
 
       stage('Build') {
+          agent any
           steps{
               script{
                 if (isUnix()) {
@@ -24,12 +25,14 @@ pipeline{
         }
 
       stage('Unit Test') {
+          agent any
           steps{
             junit '**/target/surefire-reports/TEST-*.xml'
             archive 'target/*.jar'
           }
       }
       stage('Integration Test') {
+          agent any
           steps{
               script{
                 if (isUnix()) {
@@ -41,6 +44,7 @@ pipeline{
           }
       }
       stage('Sonar') {
+          agent any
           steps{
               script{
                 if (isUnix()) {
@@ -53,11 +57,13 @@ pipeline{
       }
 
       stage('Deploy') {
+          agent any
           steps{
             sh 'curl -u jenkins:jenkins -T target/**.war "http://localhost:8080/manager/text/deploy?path=/devops&update=true"'
           }
       }
       stage("Smoke Test"){
+          agent any
           steps{
             sh "curl --retry-delay 10 --retry 5 http://localhost:8080/devops"
           }
@@ -66,6 +72,7 @@ pipeline{
 
    }
         post {
+          agent any
           always {
               script {
                cleanWs()
