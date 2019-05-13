@@ -1,19 +1,18 @@
 @Library('shared-library')_
-def mvnHome= tool 'Maven'
 
 pipeline{
   agent any
+    tools {
+        maven 'maven 3.5.3'
+    }
    stages{
       stage('Prepare') {
           steps{
           git url: 'git@github.com:yellapantula/devops.git', branch: 'release/release_4'
           }
       }
-   }
-}
 
-      
-stage('Build') {
+      stage('Build') {
           steps{
               script{
                 if (isUnix()) {
@@ -57,16 +56,12 @@ stage('Build') {
 
       stage('Deploy') {
           steps{
-            script{
-              sh 'curl -u jenkins:jenkins -T target/**.war "http://localhost:8080/manager/text/deploy?path=/devops&update=true"'
-            }
+            sh 'curl -u jenkins:jenkins -T target/**.war "http://localhost:8080/manager/text/deploy?path=/devops&update=true"'
           }
       }
       stage("Smoke Test"){
           steps{
-            script{
-               sh "curl --retry-delay 10 --retry 5 http://localhost:8080/devops"
-            }
+            sh "curl --retry-delay 10 --retry 5 http://localhost:8080/devops"
           }
       }
 
@@ -82,3 +77,6 @@ stage('Build') {
       }
 
 }
+
+
+
