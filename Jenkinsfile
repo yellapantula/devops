@@ -16,7 +16,7 @@ pipeline{
             steps{
                 script{
                         if (isUnix()) {
-                            sh " mvn clean package -Dmaven.test.failure.ignore"
+                            sh " mvn clean deploy -Dmaven.test.failure.ignore"
                         } 
                     }
             }
