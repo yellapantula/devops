@@ -26,12 +26,12 @@
 	  <repository>
 	    <id>release</id>
 	    <name>releases</name>
-	    <url>http://localhost:8081/artifactory/libs-release-local</url>
+	    <url>http://ec2-3-86-43-247.compute-1.amazonaws.com:8081/artifactory/libs-release</url>
 	  </repository>
 	  <snapshotRepository>
 	    <id>snapshot</id>
 	    <name>snapshots</name>
-	    <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+	    <url>http://ec2-3-86-43-247.compute-1.amazonaws.com:8081/artifactory/libs-snapshot</url>
 	  </snapshotRepository>
 	</distributionManagement>
 	
