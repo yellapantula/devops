@@ -15,6 +15,7 @@ pipeline{
        stage('Build') {
             steps{
                 script{
+                        sh"mvn --version"
                         if (isUnix()) {
                             sh " mvn clean deploy -Dmaven.test.failure.ignore"
                         } 
