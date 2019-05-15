@@ -23,26 +23,16 @@
 	</properties>
 	
 	<distributionManagement>
-		<repository>
-			<id>central</id>
-			<name>f5b7f90db41f-releases</name>
-			<url>http://ec2-3-87-188-208.compute-1.amazonaws.com:8081/artifactory/libs-release</url>
-		 </repository>
 		  <repository>
-			<id>central</id>
-			 <name>f5b7f90db41f-releases</name>
-			<url>http://ec2-3-87-188-208.compute-1.amazonaws.com:8081/artifactory/libs-release-local</url>
+		    <id>release</id>
+		    <name>releases</name>
+		    <url>http://localhost:8081/artifactory/libs-release-local</url>
 		  </repository>
-		 <snapshotRepository>
-			<id>snapshots</id>
-			 <name>f5b7f90db41f-snapshots</name>
-			 <url>http://ec2-3-87-188-208.compute-1.amazonaws.com:8081/artifactory/libs-snapshot-local</url>
-		 </snapshotRepository>
-		 <snapshotRepository>
-			 <id>snapshots</id>
-			 <name>f5b7f90db41f-snapshots</name>
-			 <url>http://ec2-3-87-188-208.compute-1.amazonaws.com:8081/artifactory/libs-snapshot</url>
-  	  	</snapshotRepository>
+		  <snapshotRepository>
+		    <id>snapshot</id>
+		    <name>snapshots</name>
+		    <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+		  </snapshotRepository>
 	</distributionManagement>
 	
 	<scm>
