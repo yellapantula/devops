@@ -23,16 +23,16 @@
 	</properties>
 	
 	<distributionManagement>
-	  <repository>
-	    <id>release</id>
-	    <name>releases</name>
-	    <url>http://ec2-3-86-43-247.compute-1.amazonaws.com:8081/artifactory/libs-release</url>
-	  </repository>
-	  <snapshotRepository>
-	    <id>snapshot</id>
-	    <name>snapshots</name>
-	    <url>http://ec2-3-86-43-247.compute-1.amazonaws.com:8081/artifactory/libs-snapshot</url>
-	  </snapshotRepository>
+		  <repository>
+		    <id>central</id>
+		    <name>4a1791b68cd3-releases</name>
+		    <url>http://ec2-3-86-43-247.compute-1.amazonaws.com:8081/artifactory/libs-release</url>
+		  </repository>
+		 <snapshotRepository>
+		    <id>snapshots</id>
+		    <name>4a1791b68cd3-snapshots</name>
+		    <url>http://ec2-3-86-43-247.compute-1.amazonaws.com:8081/artifactory/libs-snapshot</url>
+		 </snapshotRepository>
 	</distributionManagement>
 	
 	<scm>
