@@ -7,7 +7,7 @@ pipeline{
    stages{
       stage('Prepare') {
             steps{
-            git url: 'git@github.com:yellapantula/devops.git', branch: 'release/release_4'
+            git url: 'git@github.com:yellapantula/devops.git', branch: 'release/aws'
             }
         }
        stage('Build') {
