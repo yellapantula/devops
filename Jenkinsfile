@@ -7,7 +7,9 @@ pipeline{
    stages{
       stage('Prepare') {
             steps{
-            git url: 'git@github.com:yellapantula/devops.git', branch: 'release/aws'
+              script{
+                checkout([$class: ‘GitSCM’, branches: [[name: ‘*/release/aws’]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: ‘6cea1f17-ffb7-4b36-8a41-155f94ce92bf’, url: ‘https://github.com/yellapantula/devops.git’]]])
+                }
             }
         }
        stage('Build') {
