@@ -37,6 +37,16 @@ pipeline{
                 }
             }
         }
+     
+        stage('Sonar') {
+          steps{
+              script{
+                    if (isUnix()) {
+                        sh "mvn sonar:sonar"
+                    }
+                }
+            }
+        }
     }
         
  
