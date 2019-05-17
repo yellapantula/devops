@@ -42,7 +42,7 @@ pipeline{
           steps{
               script{
                     if (isUnix()) {
-                        sh "mvn sonar:sonar"
+                        sh "mvn sonar:sonar  -Dsonar.projectKey=maven -Dsonar.host.url=http://ec2-3-89-20-110.compute-1.amazonaws.com:9000  -Dsonar.login=9b504928429270e986856bfff3b29325145f03bd"
                     }
                 }
             }
