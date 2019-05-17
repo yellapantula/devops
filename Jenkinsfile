@@ -16,7 +16,6 @@ pipeline{
             steps{
                 script{
                         if (isUnix()) {
-                            configFileProvider([configFile(fileId: "12fbedb9-f826-48a3-9158-22d376a856c5", variable: 'MAVEN_SETTINGS_XML')])
                             sh " mvn clean deploy -s $MAVEN_SETTINGS_XML -Dmaven.test.failure.ignore"
                         } 
                   
