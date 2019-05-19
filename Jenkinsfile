@@ -49,7 +49,7 @@ pipeline{
         stage('Deploy') {
             steps{
               script{
-                sh 'curl -u jenkins:jenkins -T target/**.war "http://ec2-3-86-142-164.compute-1.amazonaws.com:8888/manager/text/deploy?path=/devops&update=true"'
+                sh 'curl -u admin:password -T target/**.war "http://ec2-3-86-142-164.compute-1.amazonaws.com:8888/manager/text/deploy?path=/devops&update=true"'
               }
             }
         }
