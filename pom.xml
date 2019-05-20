@@ -39,13 +39,13 @@
 
 		    <repository>
 			<id>central</id>
-			<name>107d4217d339-releases</name>
-			<url>http://ec2-184-73-144-192.compute-1.amazonaws.com:8081/artifactory/libs-release-local</url>
-		    </repository>
+			<name>954131e891ee-releases</name>
+			<url>http://ec2-3-92-177-8.compute-1.amazonaws.com:8081/artifactory/libs-release-local</url>
+		    </repository
 		    <snapshotRepository>
 			<id>snapshots</id>
-			<name>107d4217d339-snapshots</name>
-			<url>http://ec2-184-73-144-192.compute-1.amazonaws.com:8081/artifactory/libs-snapshot-local</url>
+			<name>954131e891ee-snapshots</name>
+			<url>http://ec2-3-92-177-8.compute-1.amazonaws.com:8081/artifactory/libs-snapshot-local</url>
 		    </snapshotRepository>
 
 	</distributionManagement>
