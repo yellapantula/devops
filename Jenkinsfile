@@ -1,3 +1,4 @@
+@Library('shared-library')_
 
 pipeline{
   agent any
@@ -56,6 +57,14 @@ pipeline{
         }
         
     }
+          post {
+           always {
+              script {
+                    cleanWs()
+                    SlackNotifier(currentBuild.currentResult)
+                }
+            }            
+        }
          
 }
 
