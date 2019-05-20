@@ -36,12 +36,11 @@
 	</profiles>
 		
 	<distributionManagement>
-
 		    <repository>
 			<id>central</id>
 			<name>954131e891ee-releases</name>
 			<url>http://ec2-3-92-177-8.compute-1.amazonaws.com:8081/artifactory/libs-release-local</url>
-		    </repository
+		    </repository>
 		    <snapshotRepository>
 			<id>snapshots</id>
 			<name>954131e891ee-snapshots</name>
